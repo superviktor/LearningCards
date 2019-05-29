@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using LearningCardsBL.Base;
 
-namespace LearningCardsDAL.Entities
+namespace LearningCardsBL.Models
 {
-    public class Card: Entity
+    public class Card:Entity
     {
         public int Number { get; set; }
 
-        public  Deck Deck { get; set; }
+        public Deck Deck { get; set; }
 
         public ICollection<ContentSection> ContentSections { get; set; }
     }

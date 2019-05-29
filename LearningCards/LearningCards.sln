@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsWebApi", "LearningCardsWebApi\LearningCardsWebApi.csproj", "{2E2EBD20-2D6A-49E2-8B9E-E5ABB1177B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsWebApi", "LearningCardsWebApi\LearningCardsWebApi.csproj", "{2E2EBD20-2D6A-49E2-8B9E-E5ABB1177B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsDAL", "LearningCardsDAL\LearningCardsDAL.csproj", "{DF613749-7DB2-49B8-A20C-B61AB207E38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsDAL", "LearningCardsDAL\LearningCardsDAL.csproj", "{DF613749-7DB2-49B8-A20C-B61AB207E38A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsBL", "LearningCardsBL\LearningCardsBL.csproj", "{21397650-CFFE-4084-82C3-8549624E01A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsTest", "LearningCardsTest\LearningCardsTest.csproj", "{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{DF613749-7DB2-49B8-A20C-B61AB207E38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF613749-7DB2-49B8-A20C-B61AB207E38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF613749-7DB2-49B8-A20C-B61AB207E38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21397650-CFFE-4084-82C3-8549624E01A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21397650-CFFE-4084-82C3-8549624E01A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21397650-CFFE-4084-82C3-8549624E01A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21397650-CFFE-4084-82C3-8549624E01A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

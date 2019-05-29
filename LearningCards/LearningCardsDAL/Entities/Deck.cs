@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using LearningCardsBL.Base;
 
 namespace LearningCardsDAL.Entities
 {
@@ -6,6 +8,6 @@ namespace LearningCardsDAL.Entities
     {
         public  string Name { get; set; }
 
-        public  ICollection Cards { get; set; }
+        public  ICollection<Card> Cards { get; set; }
     }
 }

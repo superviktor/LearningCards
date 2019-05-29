@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LearningCardsBL.Base;
 using LearningCardsDAL.Entities;
 
 namespace LearningCardsDAL.Repositories
