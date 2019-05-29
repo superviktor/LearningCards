@@ -1,6 +1,6 @@
 ﻿using LearningCardsBL.Base;
 
-namespace LearningCardsDAL.Entities
+namespace LearningCardsBL.Models
 {
     public class ContentSection:Entity
     {

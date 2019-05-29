@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LearningCardsDAL
+namespace LearningCardsBL.Base
 {
-    public abstract class Entity
+    public class Entity
     {
         public Guid Id { get; set; }
     }
