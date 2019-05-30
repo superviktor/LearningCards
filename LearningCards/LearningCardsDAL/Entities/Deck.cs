@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using LearningCardsBL.Base;
+﻿using System;
 
 namespace LearningCardsDAL.Entities
 {
-    public class Deck: Entity
+    /// <summary>
+    /// This class is only for Entity Framework
+    /// </summary>
+    public class Deck
     {
+        public Guid Id { get; set; }
         public  string Name { get; set; }
 
-        public  ICollection<Card> Cards { get; set; }
     }
 }

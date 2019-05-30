@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsWebApi", "Lear
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsDAL", "LearningCardsDAL\LearningCardsDAL.csproj", "{DF613749-7DB2-49B8-A20C-B61AB207E38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsBL", "LearningCardsBL\LearningCardsBL.csproj", "{21397650-CFFE-4084-82C3-8549624E01A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsDomain", "LearningCardsBL\LearningCardsDomain.csproj", "{21397650-CFFE-4084-82C3-8549624E01A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCardsTest", "LearningCardsTest\LearningCardsTest.csproj", "{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCardsTest", "LearningCardsTest\LearningCardsTest.csproj", "{74B0E4A8-5558-4C35-8D51-C6A8CC6E625D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

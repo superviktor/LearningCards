@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LearningCardsDomain.Models
+namespace LearningCardsWebApi.Models
 {
-    public class Deck
+    public class DeckModel
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
