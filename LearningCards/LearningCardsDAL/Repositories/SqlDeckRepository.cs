@@ -26,5 +26,20 @@ namespace LearningCardsDAL.Repositories
 
             return _mapper.Map<IEnumerable<Deck>>(testList);
         }
+
+        public override Card AddCard(Guid deckId, Card card)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DeleteCard(Guid cardId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Deck Get(Guid deckId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

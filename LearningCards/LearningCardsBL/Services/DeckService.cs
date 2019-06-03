@@ -18,5 +18,20 @@ namespace LearningCardsDomain.Services
         {
             return _deckRepository.Get();
         }
+
+        public Card AddCard(Guid deckId)
+        {
+            return _deckRepository.AddCard(deckId, new Card());
+        }
+
+        public void DeleteCard(Guid cardId)
+        {
+            _deckRepository.DeleteCard(cardId);
+        }
+
+        public Deck Get(Guid deckId)
+        {
+            return _deckRepository.Get(deckId);
+        }
     }
 }
