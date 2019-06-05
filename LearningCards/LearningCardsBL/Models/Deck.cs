@@ -8,13 +8,31 @@ namespace LearningCardsDomain.Models
     public class Deck
     {
         private List<Card> _cards;
-        public Deck()
+
+        private Deck()
         {
-            _cards = new List<Card>();
+
         }
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
         public ReadOnlyCollection<Card> Cards => _cards.AsReadOnly();
+        public Owner Owner { get; protected set; }
+
+        public static Deck Create(string name, List<Card> cards, Owner owner)
+        {
+            return new Deck()
+            {
+                Name = name,
+                _cards = cards ?? new List<Card>(),
+                Owner = owner
+            };
+        }
+
+        public Deck Update(string name)
+        {
+            Name = name;
+            return this;
+        }
 
         public Card AddCard(Card card)
         {
@@ -28,19 +46,11 @@ namespace LearningCardsDomain.Models
             return card;
         }
 
-        public Card UpdateCard(Card card)
+        public Card UpdateCard(ContentSection contentSection)
         {
-            foreach (var cs in card.ContentSections)
-            {
-                card.UpdateContentSection(cs);
-            }
-
+            var card = _cards.Single(x => x.Id == contentSection.Card.Id);
+            card.UpdateContentSection(contentSection);
             return card;
-        }
-
-        public Card Mark(Card card)
-        {
-            return card.Mark(card);
         }
     }
 }

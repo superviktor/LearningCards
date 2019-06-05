@@ -1,40 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LearningCardsDomain.DALBase;
 using LearningCardsDomain.Models;
-using LearningCardsDomain.Services;
-using NSubstitute;
 using Xunit;
 
 namespace LearningCardsTest
 {
 
-    public class OwnerTests
+    public class OwnerTests: IDisposable
     {
+        private Owner _owner;
+        public OwnerTests()
+        {
+            _owner = Owner.Create("", null);
+        }
+
+        public void Dispose()
+        {
+            _owner = null;
+        }
+
         [Fact]
         public void OwnerAddDeck_CountOfDecksIncrement()
         {
-            var owner = new Owner();
-            var beforeAddDecksAmount = owner.Decks.Count;
-            var deck = new Deck();
-            owner.AddDeck(deck);
-            var afterAddDecksAmount = owner.Decks.Count;
-            Assert.Equal(beforeAddDecksAmount +1, afterAddDecksAmount);
+            var beforeAddDecksAmount = _owner.Decks.Count;
+            var deck = Deck.Create("deck 01", null, _owner);
+            _owner.AddDeck(deck);
+            var afterAddDecksAmount = _owner.Decks.Count;
+            Assert.Equal(beforeAddDecksAmount + 1, afterAddDecksAmount);
         }
 
         [Fact]
         public void OwnerDeleteDeck_CountOfDecksDecrement()
         {
-            var owner = new Owner();
-            var deck = new Deck();
-            owner.AddDeck(deck);
-            owner.AddDeck(deck);
-            owner.AddDeck(deck);
-            owner.DeleteDeck(deck);
-            Assert.Equal(2, owner.Decks.Count);
-            
-        }
+            var deck = Deck.Create("deck 01", null, _owner);
+            _owner.AddDeck(deck);
+            _owner.AddDeck(deck);
+            _owner.AddDeck(deck);
+            _owner.DeleteDeck(deck);
+            Assert.Equal(2, _owner.Decks.Count);
 
+        }
     }
 }

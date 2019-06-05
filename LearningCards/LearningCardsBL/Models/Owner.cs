@@ -8,12 +8,22 @@ namespace LearningCardsDomain.Models
     public class Owner
     {
         private List<Deck> _decks;
-        public Owner()
+        private Owner()
         {
-            _decks = new List<Deck>();
+            
         }
+
         public Guid Id { get; set; }
         public string Email { get; protected set; }
+
+        public static Owner Create(string email, List<Deck> decks)
+        {
+            return new Owner()
+            {
+                Email = email,
+                _decks = decks ?? new List<Deck>()
+            };
+        }
 
         public ReadOnlyCollection<Deck> Decks => _decks.AsReadOnly();
 

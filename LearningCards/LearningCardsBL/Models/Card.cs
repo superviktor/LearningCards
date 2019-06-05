@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace LearningCardsDomain.Models
@@ -8,13 +9,25 @@ namespace LearningCardsDomain.Models
     public class Card
     {
         private List<ContentSection> _contentSections;
-        public Card()
+
+        private Card()
         {
-            _contentSections = new List<ContentSection>();
+
         }
-        public Guid Id { get;protected set; }
+        public Guid Id { get; protected set; }
         public int Created { get; protected set; }
         public ReadOnlyCollection<ContentSection> ContentSections => _contentSections.AsReadOnly();
+        public Deck Deck { get; protected set; }
+        public  bool Learned { get; protected set; }
+
+        public static Card Create(Deck deck, List<ContentSection> contentSections)
+        {
+            return new Card()
+            {
+                Deck = deck,
+                _contentSections = contentSections ?? new List<ContentSection>()
+            };
+        }
 
         public ContentSection AddContentSection(ContentSection contentSection)
         {
@@ -30,12 +43,14 @@ namespace LearningCardsDomain.Models
 
         public ContentSection UpdateContentSection(ContentSection contentSection)
         {
-            throw new NotImplementedException();
+            var contentSectionToUpdate = _contentSections.Single(x => x.Id == contentSection.Id);
+            contentSectionToUpdate.Update(contentSection.Content);
+            return contentSectionToUpdate;
         }
-
-        public Card Mark(Card card)
+        public Card Mark(bool learned)
         {
-            throw new NotImplementedException();
+            Learned = learned;
+            return this;
         }
     }
 }
