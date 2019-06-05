@@ -8,8 +8,6 @@ namespace LearningCardsWebApi.AutoMapperProfiles
     {
         public DeckProfile()
         {
-            CreateMap<DeckModel, Deck>().ReverseMap();
-            CreateMap<LearningCardsDAL.Entities.Deck, Deck>().ReverseMap();
         }
     }
 }

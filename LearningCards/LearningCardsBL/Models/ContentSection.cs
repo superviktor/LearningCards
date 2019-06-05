@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using LearningCardsDomain.Abstractions;
 
 namespace LearningCardsDomain.Models
 {
-    public class ContentSection
+    public class ContentSection : IAggregateRoot
     {
         private ContentSection()
         {
-            
+
         }
         public Guid Id { get; protected set; }
-        public  string Content { get; protected set; }
+        public string Content { get; protected set; }
 
         public static ContentSection Create(string content)
         {
             return new ContentSection()
             {
+                Id = new Guid(),
                 Content = content
             };
         }

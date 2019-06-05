@@ -9,7 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LearningCardsApplication(Service)Layer\LearningCardsApplication(Service)Layer.csproj" />
     <ProjectReference Include="..\LearningCardsBL\LearningCardsDomain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
   </ItemGroup>
 
 </Project>

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using LearningCardsDomain.Abstractions;
 
 namespace LearningCardsDomain.Models
 {
-    public class Deck
+    public class Deck:IAggregateRoot
     {
         private List<Card> _cards;
 
@@ -13,6 +14,7 @@ namespace LearningCardsDomain.Models
         {
 
         }
+
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
         public ReadOnlyCollection<Card> Cards => _cards.AsReadOnly();
@@ -21,6 +23,7 @@ namespace LearningCardsDomain.Models
         {
             return new Deck()
             {
+                Id = new Guid(),
                 Name = name,
                 _cards = cards ?? new List<Card>()
             };
@@ -44,13 +47,12 @@ namespace LearningCardsDomain.Models
             return card;
         }
 
-        public Card UpdateCard(Card card)
+        public Card UpdateCard(Guid cardId, Guid contentSectionId, string content)
         {
-            foreach (var cs in card.ContentSections)
-            {
-                card.UpdateContentSection(cs);
-            }
+            var card = _cards.Single(x => x.Id == cardId);
+            card.UpdateContentSection(contentSectionId, content);
             return card;
         }
+
     }
 }

@@ -45,7 +45,7 @@ namespace LearningCardsTest
             var contentSection1 = ContentSection.Create("");
             _card.AddContentSection(contentSection1);
             contentSection1.Update(content0);
-            _deck.UpdateCard(_card);
+            _deck.UpdateCard(_card.Id, contentSection1.Id, content0);
             Assert.Equal(content0, _deck.Cards.Single().ContentSections.Single().Content);
         }
     }

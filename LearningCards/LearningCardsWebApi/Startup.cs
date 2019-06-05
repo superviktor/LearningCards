@@ -29,7 +29,7 @@ namespace LearningCardsWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddTransient<LearningCardsDomain.DALBase.DeckRepository, SqlDeckRepository>();
+
             services.AddAutoMapper(typeof(Startup));
         }
 

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LearningCardsBL\LearningCardsDomain.csproj" />
+    <ProjectReference Include="..\LearningCardsApplication(Service)Layer\LearningCardsApplication(Service)Layer.csproj" />
     <ProjectReference Include="..\LearningCardsDAL\LearningCardsDAL.csproj" />
   </ItemGroup>
 
