@@ -7,18 +7,15 @@ namespace LearningCardsTest
 {
     public class DeckTests:IDisposable
     {
-        private Owner _owner;
         private Deck _deck;
         private Card _card;
         public DeckTests()
         {
-            _owner = Owner.Create("", null);
-            _deck = Deck.Create("deck0", null, _owner);
-            _card = Card.Create(_deck, null);
+            _deck = Deck.Create("deck0", null);
+            _card = Card.Create(null);
         }
         public void Dispose()
         {
-            _owner = null;
             _card = null;
             _deck = null;
         }
@@ -43,10 +40,12 @@ namespace LearningCardsTest
         [Fact]
         public void DeckUpdateCard()
         {
-            _card.AddContentSection(ContentSection.Create(_card, ""));
-            _deck.AddCard(_card);
             const string content0 = "content0";
-            _deck.UpdateCard(ContentSection.Create(_card, content0));
+            _deck.AddCard(_card);
+            var contentSection1 = ContentSection.Create("");
+            _card.AddContentSection(contentSection1);
+            contentSection1.Update(content0);
+            _deck.UpdateCard(_card);
             Assert.Equal(content0, _deck.Cards.Single().ContentSections.Single().Content);
         }
     }

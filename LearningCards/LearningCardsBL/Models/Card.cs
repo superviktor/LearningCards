@@ -17,14 +17,12 @@ namespace LearningCardsDomain.Models
         public Guid Id { get; protected set; }
         public int Created { get; protected set; }
         public ReadOnlyCollection<ContentSection> ContentSections => _contentSections.AsReadOnly();
-        public Deck Deck { get; protected set; }
         public  bool Learned { get; protected set; }
 
-        public static Card Create(Deck deck, List<ContentSection> contentSections)
+        public static Card Create(List<ContentSection> contentSections)
         {
             return new Card()
             {
-                Deck = deck,
                 _contentSections = contentSections ?? new List<ContentSection>()
             };
         }

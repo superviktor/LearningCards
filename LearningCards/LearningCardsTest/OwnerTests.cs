@@ -22,7 +22,7 @@ namespace LearningCardsTest
         public void OwnerAddDeck_CountOfDecksIncrement()
         {
             var beforeAddDecksAmount = _owner.Decks.Count;
-            var deck = Deck.Create("deck 01", null, _owner);
+            var deck = Deck.Create("deck 01", null);
             _owner.AddDeck(deck);
             var afterAddDecksAmount = _owner.Decks.Count;
             Assert.Equal(beforeAddDecksAmount + 1, afterAddDecksAmount);
@@ -31,7 +31,7 @@ namespace LearningCardsTest
         [Fact]
         public void OwnerDeleteDeck_CountOfDecksDecrement()
         {
-            var deck = Deck.Create("deck 01", null, _owner);
+            var deck = Deck.Create("deck 01", null);
             _owner.AddDeck(deck);
             _owner.AddDeck(deck);
             _owner.AddDeck(deck);

@@ -16,15 +16,13 @@ namespace LearningCardsDomain.Models
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
         public ReadOnlyCollection<Card> Cards => _cards.AsReadOnly();
-        public Owner Owner { get; protected set; }
 
-        public static Deck Create(string name, List<Card> cards, Owner owner)
+        public static Deck Create(string name, List<Card> cards)
         {
             return new Deck()
             {
                 Name = name,
-                _cards = cards ?? new List<Card>(),
-                Owner = owner
+                _cards = cards ?? new List<Card>()
             };
         }
 
@@ -46,10 +44,12 @@ namespace LearningCardsDomain.Models
             return card;
         }
 
-        public Card UpdateCard(ContentSection contentSection)
+        public Card UpdateCard(Card card)
         {
-            var card = _cards.Single(x => x.Id == contentSection.Card.Id);
-            card.UpdateContentSection(contentSection);
+            foreach (var cs in card.ContentSections)
+            {
+                card.UpdateContentSection(cs);
+            }
             return card;
         }
     }
